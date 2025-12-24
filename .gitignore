@@ -1,0 +1,13 @@
+GoodBooks.Data/bin
+GoodBooks.Data/obj
+GoodBooks.Services/bin
+GoodBooks.Services/obj
+GoodBooks.Test/bin
+GoodBooks.Test/obj
+GoodBooks.Web/bin
+GoodBooks.Web/obj
+.vs
+Models/bin
+Models/obj
+goodbooks-frontend/node_modules
+goodbooks-frontend/.env
