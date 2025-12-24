@@ -1,4 +1,8 @@
 <template>
+    <div class="nav nav-bar">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/books/add">Add Book</router-link>
+    </div>
     <div class="books-container">
         <HelloWorld msg="Books" />
         <div v-for="book in books" :key="book.id" class="book-item">

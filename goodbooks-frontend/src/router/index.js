@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeComponent from '../views/HomeComponent.vue';
-import AboutComponent from '@/views/AboutComponent.vue';
-import BooksComponent from '@/views/BooksComponent.vue';
-import AddBookComponent from '@/views/AddBookComponent.vue';
+import BooksComponent from '@/views/Books/BooksComponent.vue';
+import AddBookComponent from '@/views/Books/AddBookComponent.vue';
+import RemoveBookComponent from '@/views/Books/RemoveBookComponent.vue';
+import GetBookComponent from '@/views/Books/GetBookComponent.vue';
 
 const routes = [
     {
@@ -11,19 +12,24 @@ const routes = [
         component: HomeComponent
     },
     {
-        path: '/about',
-        name: 'AboutComponent',
-        component: AboutComponent
-    },
-    {
-        path: '/books',
+        path: '/books/list',
         name: 'BooksComponent',
         component: BooksComponent
     },
     {
-        path: '/add-book',
+        path: '/books/add',
         name: 'AddBookComponent',
         component: AddBookComponent
+    },
+    {
+        path: '/books/remove/:id',
+        name: 'RemoveBookComponent',
+        component: RemoveBookComponent
+    },
+    {
+        path: '/books/details/:id',
+        name: 'GetBookComponent',
+        component: GetBookComponent
     }
 ]
 

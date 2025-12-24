@@ -30,7 +30,7 @@ export default {
                 var httpResponseMessage = await axios.post(`${process.env.VUE_APP_API_URL}/books`, this.newBook);
                 if (httpResponseMessage.status === 201) {
                     console.log('Book added successfully');
-                    router.push('/books');
+                    router.push('/books/list');
                 }
                 else {
                     console.error('Failed to add book:', httpResponseMessage);
