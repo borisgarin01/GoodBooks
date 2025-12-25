@@ -26,9 +26,9 @@ export default {
             }
         };
     },
-    created() {
+    async created() {
         // Get ID from route params and fetch the book
-        this.fetchBook();
+        await this.fetchBook();
     },
     methods: {
         formatDate(dateString) {
@@ -57,8 +57,10 @@ export default {
 
         async removeBook() {
             try {
+                const bookId = this.$route.params.id;
+
+                console.log(`${process.env.VUE_APP_API_URL}/books/${bookId}`);
                 // Get the book ID (from route or from deletingBook)
-                const bookId = this.$route.params.id || this.deletingBook.id;
 
                 if (!bookId) {
                     console.error('No book ID to delete');

@@ -9,6 +9,10 @@ webApplicationBuilder.Services.AddScoped<IBooksService, BooksService>();
 webApplicationBuilder.Services.AddControllers();
 webApplicationBuilder.Services.AddOpenApi();
 
+webApplicationBuilder.Services.AddSpaStaticFiles(configuration => {
+    configuration.RootPath = "wwwroot";
+});
+
 webApplicationBuilder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
@@ -23,6 +27,12 @@ GoodBooksDbContext goodBooksDbContext = webApplication.Services.CreateScope().Se
 goodBooksDbContext.Database.Migrate();
 
 webApplication.UseCors("AllowAll");
+
+webApplication.UseDefaultFiles();
+webApplication.UseStaticFiles();
+
+webApplication.MapFallbackToFile("index.html");
+
 webApplication.MapOpenApi();
 webApplication.MapScalarApiReference();
 webApplication.MapControllers();

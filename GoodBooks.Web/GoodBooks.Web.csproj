@@ -4,10 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <SpaRoot>../../goodbooks-frontend</SpaRoot>
+    <SpaProxyLaunchCommand>npm run serve</SpaProxyLaunchCommand>
+    <SpaProxyServerUrl>http://172.16.1.62:5013</SpaProxyServerUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,5 +28,4 @@
     <ProjectReference Include="..\GoodBooks.Services\GoodBooks.Services.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
-
 </Project>
